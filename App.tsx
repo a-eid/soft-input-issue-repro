@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
 import { TextInput } from "react-native-gesture-handler"
+import { AvoidSoftInputView } from "react-native-avoid-softinput"
 
 const stack = createNativeStackNavigator()
 
@@ -18,9 +19,9 @@ function Home({ navigation }: any) {
 function Modal() {
   return (
     <View style={{ flex: 1, justifyContent: "flex-end" }}>
-      <View style={{ backgroundColor: "white", height: 100 }}>
-        <TextInput style={{ backgroundColor: "red", height: 45 }} />
-      </View>
+      <AvoidSoftInputView style={{ padding: 20, backgroundColor: "blue" }} avoidOffset={20}>
+        <TextInput style={{ backgroundColor: "red", height: 45, paddingHorizontal: 20 }} />
+      </AvoidSoftInputView>
     </View>
   )
 }
@@ -29,7 +30,7 @@ export default function App() {
   return (
     <NavigationContainer>
       {/* @ts-ignore */}
-      <stack.Navigator>
+      <stack.Navigator screenOptions={{ headerTopInsetEnabled: false }}>
         <stack.Screen name="home" component={Home} />
         <stack.Screen
           name="modal"
@@ -39,6 +40,8 @@ export default function App() {
             headerShown: false,
             contentStyle: {
               backgroundColor: "rgba(0,0,0, 0.6)",
+              flex: 1,
+              justifyContent: "flex-end",
             },
           }}
         />

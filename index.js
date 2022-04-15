@@ -6,7 +6,8 @@ import { AvoidSoftInput } from "react-native-avoid-softinput"
 if (Platform.OS === "android") {
   AvoidSoftInput.setAdjustNothing()
 }
-AvoidSoftInput.setEnabled(true)
+
+AvoidSoftInput.setEnabled(false)
 
 import App from "./App"
 
