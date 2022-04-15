@@ -8,17 +8,19 @@ const stack = createNativeStackNavigator()
 
 function Home({ navigation }: any) {
   return (
-    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
-      <Text style={{ fontSize: 40, textAlign: "center" }} onPress={() => navigation.navigate("modal")}>
-        Home
-      </Text>
-      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
-      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
-      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
-      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
-      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
-      <View style={{ height: 50, backgroundColor: "red", marginTop: "auto" }}></View>
-    </ScrollView>
+    <AvoidSoftInputView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
+        <Text style={{ fontSize: 40, textAlign: "center" }} onPress={() => navigation.navigate("modal")}>
+          Home
+        </Text>
+        <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+        <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+        <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+        <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+        <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+        <View style={{ height: 50, backgroundColor: "red", marginTop: "auto" }}></View>
+      </ScrollView>
+    </AvoidSoftInputView>
   )
 }
 
