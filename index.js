@@ -7,7 +7,7 @@ if (Platform.OS === "android") {
   AvoidSoftInput.setAdjustNothing()
 }
 
-AvoidSoftInput.setEnabled(false)
+AvoidSoftInput.setEnabled(true)
 
 import App from "./App"
 

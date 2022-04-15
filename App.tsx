@@ -1,27 +1,31 @@
 import { StyleSheet, Text, View } from "react-native"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
-import { TextInput } from "react-native-gesture-handler"
+import { ScrollView, TextInput } from "react-native-gesture-handler"
 import { AvoidSoftInputView } from "react-native-avoid-softinput"
 
 const stack = createNativeStackNavigator()
 
 function Home({ navigation }: any) {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ fontSize: 40 }} onPress={() => navigation.navigate("modal")}>
+    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
+      <Text style={{ fontSize: 40, textAlign: "center" }} onPress={() => navigation.navigate("modal")}>
         Home
       </Text>
-    </View>
+      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+      <TextInput style={{ height: 50, marginBottom: 20, backgroundColor: "blue" }} />
+      <View style={{ height: 50, backgroundColor: "red", marginTop: "auto" }}></View>
+    </ScrollView>
   )
 }
 
 function Modal() {
   return (
     <View style={{ flex: 1, justifyContent: "flex-end" }}>
-      <AvoidSoftInputView style={{ padding: 20, backgroundColor: "blue" }} avoidOffset={20}>
-        <TextInput style={{ backgroundColor: "red", height: 45, paddingHorizontal: 20 }} />
-      </AvoidSoftInputView>
+      <TextInput style={{ backgroundColor: "red", height: 45, paddingHorizontal: 20 }} />
     </View>
   )
 }
